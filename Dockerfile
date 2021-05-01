@@ -18,7 +18,7 @@ RUN apk add --no-cache ca-certificates bash git openssh curl gettext jq bind-too
     && wget -q https://get.helm.sh/helm-v${HELM_VERSION}-linux-amd64.tar.gz -O - | tar -xzO linux-amd64/helm > /usr/local/bin/helm \
     && chmod +x /usr/local/bin/helm \
     && chmod g+rwx /root \
-    && wget -q https://github.com/imroc/helm-push/releases/download/0.1.1/helm-push_0.1.1_Linux_x86_64.tar.gz -O -| tar xzo helmpush > /root \
+    && wget -q https://github.com/imroc/helm-push/releases/download/0.1.1/helm-push_0.1.1_Linux_x86_64.tar.gz -O -| tar xzo helmpush > /root/helmpush \
     && helm plugin install /root/helmpush \
     && mkdir /config \
     && chmod g+rwx /config \
