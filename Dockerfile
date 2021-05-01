@@ -26,4 +26,5 @@ RUN apk add --no-cache ca-certificates bash git openssh curl gettext jq bind-too
 
 WORKDIR /config
 
+
 CMD bash
