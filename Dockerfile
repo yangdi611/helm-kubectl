@@ -18,6 +18,10 @@ RUN apk add --no-cache ca-certificates bash git openssh curl gettext jq bind-too
     && wget -q https://get.helm.sh/helm-v${HELM_VERSION}-linux-amd64.tar.gz -O - | tar -xzO linux-amd64/helm > /usr/local/bin/helm \
     && chmod +x /usr/local/bin/helm \
     && chmod g+rwx /root \
+    && cd /root \
+    && git clone https://github.com/imroc/helm-push.git \
+    && cd /root/helm-push \
+    && helm plugin install ./ \
     && mkdir /config \
     && chmod g+rwx /config \
     && helm repo add "stable" "https://charts.helm.sh/stable" --force-update
